@@ -12,7 +12,7 @@ def makeuser():
         )
         print(response)
 
-        # attach a policy
+        # add to group
         response = iam.add_user_to_group(
             GroupName=input('Choose group to add to: '),
             UserName = user
