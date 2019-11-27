@@ -6,16 +6,16 @@ iam = boto3.client('iam')
 def makeuser():
     for response in range(int(input("How many users do you want to create?: "))):
         # create user
-        useruser = input('user name?')
+        user = input('user name?: ')
         response = iam.create_user(
-            UserName = useruser
+            UserName = user
         )
         print(response)
 
         # attach a policy
         response = iam.add_user_to_group(
             GroupName='dojostudents',
-            UserName = useruser
+            UserName = user
         )
 makeuser()
 
